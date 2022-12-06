@@ -1,11 +1,12 @@
+
 // assign pin num
 int right_pin = 6;
 int left_pin = 7;
-int forward_pin = 10;
 int reverse_pin = 9;
+int forward_pin = 10;
 
 // duration for output
-int time = 50;
+int time = 10000;
 // initial command
 int command = 0;
 
@@ -21,63 +22,65 @@ void loop() {
   //receive command
   if (Serial.available() > 0){
     command = Serial.read();
-    Serial.print(command)
+    Serial.print(char(command) - '0' );
+    send_command(char(command) - '0',time);
+    
   }
   else{
     reset();
   }
-  //  send_command(command,time);
+ 
 }
 
 void right(int time){
-  digitalWrite(right_pin, LOW);
+  digitalWrite(right_pin, HIGH);
   delay(time);
 }
 
 void left(int time){
-  digitalWrite(left_pin, LOW);
+  digitalWrite(left_pin, HIGH);
   delay(time);
 }
 
 void forward(int time){
-  digitalWrite(forward_pin, LOW);
+  digitalWrite(forward_pin, HIGH);
   delay(time);
 }
 
 void reverse(int time){
-  digitalWrite(reverse_pin, LOW);
+  digitalWrite(reverse_pin, HIGH);
   delay(time);
 }
 
 void forward_right(int time){
-  digitalWrite(forward_pin, LOW);
-  digitalWrite(right_pin, LOW);
+  digitalWrite(forward_pin, HIGH);
+  digitalWrite(right_pin, HIGH);
   delay(time);
 }
 
 void reverse_right(int time){
-  digitalWrite(reverse_pin, LOW);
-  digitalWrite(right_pin, LOW);
+  digitalWrite(reverse_pin, HIGH);
+  digitalWrite(right_pin, HIGH);
   delay(time);
 }
 
 void forward_left(int time){
-  digitalWrite(forward_pin, LOW);
-  digitalWrite(left_pin, LOW);
+  digitalWrite(forward_pin, HIGH);
+  digitalWrite(left_pin, HIGH);
   delay(time);
 }
 
 void reverse_left(int time){
-  digitalWrite(reverse_pin, LOW);
-  digitalWrite(left_pin, LOW);
+  digitalWrite(reverse_pin, HIGH);
+  digitalWrite(left_pin, HIGH);
   delay(time);
 }
-
+// everything above is high
 void reset(){
-  digitalWrite(right_pin, HIGH);
-  digitalWrite(left_pin, HIGH);
-  digitalWrite(forward_pin, HIGH);
-  digitalWrite(reverse_pin, HIGH);
+  digitalWrite(right_pin, LOW);
+  digitalWrite(left_pin, LOW);
+  digitalWrite(forward_pin, LOW);
+  digitalWrite(reverse_pin, LOW);
 }
 
 void send_command(int command, int time){
@@ -98,6 +101,6 @@ void send_command(int command, int time){
      case 8: reverse_right(time); break;
      case 9: reverse_left(time); break;
 
-     default: Serial.print("Inalid Command\n");
+     default: Serial.print("Inalid Command\n"); Serial.print(command);
     }
 }
