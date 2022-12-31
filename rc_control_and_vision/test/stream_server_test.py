@@ -4,6 +4,9 @@ import numpy as np
 import cv2
 import socket
 
+import sys
+sys.path.append('.')
+import config
 
 class VideoStreamingTest(object):
     def __init__(self, host, port):
@@ -46,5 +49,5 @@ class VideoStreamingTest(object):
 
 if __name__ == '__main__':
     # host, port
-    h, p = "192.168.1.28", 8000
+    h, p = config.server_addr, 8000
     VideoStreamingTest(h, p)

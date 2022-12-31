@@ -5,10 +5,13 @@ import struct
 import time
 import picamera
 
+import sys
+sys.path.append('.')
+import config
 
 # create socket and bind host
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client_socket.connect(('192.168.1.100', 8000))
+client_socket.connect((config.server_addr, 8000))
 connection = client_socket.makefile('wb')
 
 try:

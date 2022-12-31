@@ -3,6 +3,9 @@ __author__ = 'zhengwang'
 import socket
 import time
 
+import sys
+sys.path.append('.')
+import config
 
 class SensorStreamingTest(object):
     def __init__(self, host, port):
@@ -36,5 +39,5 @@ class SensorStreamingTest(object):
 
 
 if __name__ == '__main__':
-    h, p = "192.168.1.100", 8002
+    h, p = config.server_addr , 8002
     SensorStreamingTest(h, p)

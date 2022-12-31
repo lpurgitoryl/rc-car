@@ -9,6 +9,9 @@ import socket
 import time
 import os
 
+import sys
+sys.path.append('.')
+import config
 
 class CollectTrainingData(object):
     
@@ -168,10 +171,10 @@ class CollectTrainingData(object):
 
 if __name__ == '__main__':
     # host, port
-    h, p = "192.168.1.100", 8000
+    h, p = config.server_addr, 8000
 
     # serial port
-    sp = "/dev/tty.usbmodem1421"
+    sp = config.serial_port
 
     # vector size, half of the image
     s = 120 * 320

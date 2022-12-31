@@ -3,12 +3,15 @@ from socket import *
 import time
 import RPi.GPIO as GPIO
 
+import sys
+sys.path.append('.')
+import config
 
 GPIO.setwarnings(False)
 
 # create a socket and bind socket to the host
 client_socket = socket(AF_INET, SOCK_STREAM)
-client_socket.connect(('192.168.1.100', 8002))
+client_socket.connect((config.server_addr, 8002))
 
 def measure():
     """
@@ -47,7 +50,7 @@ GPIO.output(GPIO_TRIGGER, False)
 try:
     while True:
         distance = measure()
-        print "Distance : %.1f cm" % distance
+        print ("Distance : %.1f cm" % distance)
         # send data to the host every 0.5 sec
         client_socket.send(str(distance).encode('utf-8'))
         time.sleep(0.5)

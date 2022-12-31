@@ -10,6 +10,9 @@ import numpy as np
 from model import NeuralNetwork
 from rc_driver_helper import *
 
+sys.path.append('.')
+import config
+
 # distance data measured by ultrasonic sensor
 sensor_data = None
 
@@ -183,7 +186,7 @@ class Server(object):
 
 
 if __name__ == '__main__':
-    h, p1, p2 = "192.168.1.100", 8000, 8002
+    h, p1, p2 = config.server_addr, 8000, 8002
 
     ts = Server(h, p1, p2)
     ts.start()

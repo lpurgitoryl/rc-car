@@ -6,6 +6,9 @@ import serial
 from model import NeuralNetwork
 from rc_driver_helper import RCControl
 
+import sys
+sys.path.append('.')
+import config
 
 class RCDriverNNOnly(object):
 
@@ -65,10 +68,10 @@ class RCDriverNNOnly(object):
 
 if __name__ == '__main__':
     # host, port
-    h, p = "192.168.1.100", 8000
+    h, p = config.server_addr, 8000
 
     # serial port
-    sp = "/dev/tty.usbmodem1421"
+    sp = config.serial_port
 
     # model path
     path = "saved_model/nn_model.xml"

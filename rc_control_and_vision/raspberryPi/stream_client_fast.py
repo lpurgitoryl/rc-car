@@ -5,6 +5,9 @@ import time
 import picamera
 import sys
 
+sys.path.append('.')
+import config
+
 class SplitFrames(object):
     def __init__(self, connection):
         self.connection = connection
@@ -25,7 +28,7 @@ class SplitFrames(object):
                 self.stream.seek(0)
         self.stream.write(buf)
 
-my_server = '192.168.1.100'
+my_server = config.server_addr
 res = (320, 240)
 client_socket = socket.socket()
 client_socket.connect((my_server, 8000))
