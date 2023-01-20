@@ -41,6 +41,7 @@ class VideoStreamingTest(object):
                     cv2.imshow('image', image)
 
                     if cv2.waitKey(1) & 0xFF == ord('q'):
+                        print('exit key pressed')
                         break
         finally:
             self.connection.close()
