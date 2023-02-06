@@ -10,3 +10,5 @@ dependencies:
         - pygame
         - pyserial
         - opencv-python
+        # - spidev
+        # uncomment above when running on rpi
