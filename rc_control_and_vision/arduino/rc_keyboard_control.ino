@@ -21,12 +21,11 @@ void loop() {
   //receive command
   if (Serial.available() > 0){
     command = Serial.read();
-    Serial.print(command)
   }
   else{
     reset();
   }
-  //  send_command(command,time);
+   send_command(command,time);
 }
 
 void right(int time){

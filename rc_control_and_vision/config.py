@@ -2,7 +2,7 @@
 
 # port for serial connection
 serial_port = '/dev/ttyACM0'
-# mac_port = '/dev/tty.usbmodem1421'
+# mac_port use '/dev/tty.usbmodem1421'
 
 # server location
 # Im running a VM, Using a NAT bridge config.
