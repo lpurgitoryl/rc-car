@@ -21,9 +21,11 @@ try:
         #     if msg == 'exit':
         #         break
         #     print('sent message\n')
-        # recv_msg = str(client_socket.recv(1024).decode('utf8', 'strict'))
-        # if recv_msg:
-        #     print(f'\nmessage recv\'d from server =>{recv_msg}<=\n')
+        recv_msg = str(client_socket.recv(1024).decode('utf8', 'strict'))
+        if recv_msg == 'q':
+            break
+        
+        print(f'\nmessage recv\'d from server =>{recv_msg}<=\n')
         
         time.sleep(0.5) 
 finally:
