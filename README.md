@@ -7,3 +7,4 @@
 - https://zhengludwig.wordpress.com/projects/self-driving-rc-car/
 - https://github.com/hamuchiwa/AutoRCCar
 - https://web.archive.org/web/20130601112348/http://thelivingpearl.com/2013/01/04/drive-a-lamborghini-with-your-keyboard/
+- https://www.digitalocean.com/community/tutorials/python-socket-programming-server-client
