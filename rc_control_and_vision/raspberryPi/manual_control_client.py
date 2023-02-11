@@ -27,7 +27,7 @@ try:
         
         print(f'\nmessage recv\'d from server =>{recv_msg}<=\n')
         
-        time.sleep(0.5) 
+    
 finally:
     client_socket.close()
 

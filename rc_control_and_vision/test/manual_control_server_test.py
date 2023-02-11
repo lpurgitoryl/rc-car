@@ -1,6 +1,7 @@
 import socket
 import pygame
 from pygame.locals import *
+import time
 
 import sys
 sys.path.append('.')
@@ -92,6 +93,7 @@ class SensorStreamingTest(object):
                             
                             # self.ser.close()
                             break
+                        
 
                     elif event.type == pygame.KEYUP:
                         self.connection.send(str(0).encode('utf-8'))
