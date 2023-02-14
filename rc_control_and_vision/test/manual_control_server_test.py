@@ -48,18 +48,22 @@ class SensorStreamingTest(object):
                         # complex orders
                         if key_input[pygame.K_UP] and key_input[pygame.K_RIGHT]:
                             print("Forward Right")
+                            self.connection.send(str(6).encode('utf-8'))
                             # self.ser.write(chr(6).encode())
 
                         elif key_input[pygame.K_UP] and key_input[pygame.K_LEFT]:
                             print("Forward Left")
+                            self.connection.send(str(7).encode('utf-8'))
                             # self.ser.write(chr(7).encode())
 
                         elif key_input[pygame.K_DOWN] and key_input[pygame.K_RIGHT]:
                             print("Reverse Right")
+                            self.connection.send(str(8).encode('utf-8'))
                             # self.ser.write(chr(8).encode())
 
                         elif key_input[pygame.K_DOWN] and key_input[pygame.K_LEFT]:
                             print("Reverse Left")
+                            self.connection.send(str(9).encode('utf-8'))
                             # self.ser.write(chr(9).encode())
 
                         # simple orders
@@ -85,7 +89,7 @@ class SensorStreamingTest(object):
 
                         # exit
                         elif key_input[pygame.K_x] or key_input[pygame.K_q]:
-                            print("Exit")
+                            print("Exit Command Recvd")
                             self.send_inst = False
                             self.connection.send(str(0).encode('utf-8'))
                             self.connection.send(str('q').encode('utf-8'))
