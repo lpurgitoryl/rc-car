@@ -97,7 +97,7 @@ class SensorStreamingTest(object):
                             
                             # self.ser.close()
                             break
-                        
+                        time.sleep(0.25)
 
                     elif event.type == pygame.KEYUP:
                         self.connection.send(str(0).encode('utf-8'))
