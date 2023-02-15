@@ -28,7 +28,7 @@ try:
             break
         
         print(f'\nmessage recv\'d from server =>{recv_msg}<=\n')
-        serial.write(ard)
+        ser.write(chr(int(ard)).encode())
         
         
     
