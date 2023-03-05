@@ -9,7 +9,7 @@ serial_port = '/dev/ttyACM0'
 # run 'ifconfig' and use the inet addr for the wifi in the form 192.168.1.X
 iphone = '172.20.10.3'
 home = '192.168.1.28'
-andriod = '192.168.53.183'
+andriod = '192.168.116.85'
 server_addr = iphone
 # iphone '172.20.10.1'
 

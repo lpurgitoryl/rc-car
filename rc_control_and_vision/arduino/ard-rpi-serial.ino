@@ -6,11 +6,9 @@ int in2 = 9;
 
 
 // forward/reverse
-int enb = 5; // PWM
-int in3 = 4;
-int in4 = 3;
-
-
+int enb = 7; // PWM
+int in3 = 6;
+int in4 = 5;
 
 
 // duration for output
@@ -42,59 +40,92 @@ void loop() {
   }
   else{
     reset();
-    command = 0;
+    // command = 0;
   }
    send_command(command,time);
 }
 
 void right(int time){
  digitalWrite(ena, HIGH);
- digitalWrite(in1, HIGH);
- digitalWrite(in2, LOW);
- 
+ digitalWrite(in1, LOW);
+ digitalWrite(in2, HIGH);
+  
   delay(time);
 }
 
 void left(int time){
+
  digitalWrite(ena, HIGH);
- digitalWrite(in1, LOW);
- digitalWrite(in2, HIGH);
+ digitalWrite(in1, HIGH);
+ digitalWrite(in2, LOW);
  
  delay(time);
 }
 
 void forward(int time){
+ 
  digitalWrite(enb, HIGH);
  digitalWrite(in3, HIGH);
  digitalWrite(in4, LOW);
-   
+ 
   delay(time);
 }
 
 void reverse(int time){
  digitalWrite(enb, HIGH);
  digitalWrite(in3, LOW);
- digitalWrite(in4, HIGH);  
+ digitalWrite(in4, HIGH);
+ 
   delay(time);
 }
 
 void forward_right(int time){
+ digitalWrite(enb, HIGH);
+ digitalWrite(in3, HIGH);
+ digitalWrite(in4, LOW);
+
+ digitalWrite(ena, HIGH);
+ digitalWrite(in1, LOW);
+ digitalWrite(in2, HIGH);
+ 
  
   delay(time);
 }
 
 void reverse_right(int time){
+ digitalWrite(enb, HIGH);
+ digitalWrite(in3, LOW);
+ digitalWrite(in4, HIGH);
 
+ digitalWrite(ena, HIGH);
+ digitalWrite(in1, LOW);
+ digitalWrite(in2, HIGH);
   delay(time);
 }
 
 void forward_left(int time){
+ digitalWrite(enb, HIGH);
+ digitalWrite(in3, HIGH);
+ digitalWrite(in4, LOW);
 
+ digitalWrite(ena, HIGH);
+ digitalWrite(in1, HIGH);
+ digitalWrite(in2, LOW);
+
+ 
+ 
   delay(time);
 }
 
 void reverse_left(int time){
+ digitalWrite(enb, HIGH);
+ digitalWrite(in3, LOW);
+ digitalWrite(in4, HIGH);
 
+ digitalWrite(ena, HIGH);
+ digitalWrite(in1, HIGH);
+ digitalWrite(in2, LOW);
+ 
   delay(time);
 }
 
