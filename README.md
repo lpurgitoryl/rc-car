@@ -2,6 +2,7 @@
 - https://www.analyticsvidhya.com/blog/2020/05/tutorial-real-time-lane-detection-opencv/?
 - basic lane detection, frame by frame and outputs video
 - uses assets in road_detection/ output is in detected/ along with video in root
+- https://www.instructables.com/Autonomous-Lane-Keeping-Car-Using-Raspberry-Pi-and/
 
 # Source 2: /rc_control_and_vision
 - https://zhengludwig.wordpress.com/projects/self-driving-rc-car/
