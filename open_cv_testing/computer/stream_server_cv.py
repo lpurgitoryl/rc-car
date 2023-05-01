@@ -21,8 +21,8 @@ def convert_to_HSV(frame):
 # https://opencv24-python-tutorials.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_colorspaces/py_colorspaces.html
 
 def detect_edges(frame):
-    lower_blue = np.array([36, 0, 103], dtype = "uint8")
-    upper_blue = np.array([127, 24, 255], dtype="uint8")
+    lower_blue = np.array([79, 0, 23], dtype = "uint8")
+    upper_blue = np.array([117, 255, 140], dtype="uint8")
     
     mask = cv2.inRange(frame,lower_blue,upper_blue) # this mask will filter out everything but blue
     cv2.imshow("mask", mask)
@@ -221,7 +221,6 @@ class VideoStreamingTest(object):
                     
                     cv2.imshow('original image', image)
                     
-
                     
                     if cv2.waitKey(1) & 0xFF == ord('q'):
                         print('exit key pressed')

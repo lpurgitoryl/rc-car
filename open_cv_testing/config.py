@@ -10,7 +10,7 @@ serial_port = '/dev/ttyACM0'
 iphone = '172.20.10.3'
 home = '192.168.1.28'
 andriod = '192.168.116.85'
-server_addr = home
+server_addr = iphone
 # iphone '172.20.10.1'
 
 # the ultrasonic sensor and the pi camera run on the same server but diffrent ports
